@@ -25,21 +25,19 @@ void main(List<String> arguments) {
   }
 }
 
-// Функция поиска в Wikipedia (с имитацией результатов)
-void searchWikipedia(List<String>? arguments) {
-  final String articleTitle;
+// Функция поиска в Wikipedia
+void searchWikipedia(List<String>? arguments) async { // Добавлен 'async'
+  final String? articleTitle;
 
   // Если пользователь не передал аргументы - запрашиваем название статьи
   if (arguments == null || arguments.isEmpty) {
     print('Please provide an article title.');
-    // Ожидаем ввод и подставляем пустую строку, если ввод равен null
-    articleTitle = stdin.readLineSync() ?? '';
+    articleTitle = stdin.readLineSync(); // Ожидаем ввод от пользователя
   } else {
     // Иначе объединяем все аргументы в одну строку
     articleTitle = arguments.join(' ');
   }
 
-  // Имитация процесса поиска
   print('Looking up articles about "$articleTitle". Please wait.');
   print('Here ya go!');
   print('(Pretend this is an article about "$articleTitle")');

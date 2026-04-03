@@ -1,5 +1,6 @@
-import 'package:cli/cli.dart' as cli;
+// Импорт не используется, так как мы не вызываем функций из пакета cli
 
 void main(List<String> arguments) {
-  print('Hello world: ${cli.calculate()}!');
+  // Вывод приветственного сообщения в консоль
+  print('Hello, Kirill!');
 }

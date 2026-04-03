@@ -24,7 +24,7 @@ void main(List<String> arguments) {
   }
 }
 
-// Функция поиска в Wikipedia
+// Функция поиска в Wikipedia (с имитацией результатов)
 void searchWikipedia(List<String>? arguments) {
   final String articleTitle;
 
@@ -38,7 +38,10 @@ void searchWikipedia(List<String>? arguments) {
     articleTitle = arguments.join(' ');
   }
 
-  print('Current article title: $articleTitle');
+  // Имитация процесса поиска
+  print('Looking up articles about "$articleTitle". Please wait.');
+  print('Here ya go!');
+  print('(Pretend this is an article about "$articleTitle")');
 }
 
 // Функция для отображения справки по доступным командам

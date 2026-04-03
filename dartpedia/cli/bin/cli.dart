@@ -20,6 +20,11 @@ void main(List<String> arguments) {
   }
 }
 
+// Функция поиска в Wikipedia (получает аргументы команды search)
+void searchWikipedia(List<String>? arguments) {
+  print('searchWikipedia received arguments: $arguments');
+}
+
 // Функция для отображения справки по доступным командам
 void printUsage() {
   print(

@@ -10,6 +10,10 @@ void main(List<String> arguments) {
   else if (arguments.first == 'version') {
     print('Dartpedia CLI version $version');
   } 
+  // Если первый аргумент 'search' - команда поиска
+  else if (arguments.first == 'search') {
+    print('Search command recognized!'); // Заглушка для команды поиска
+  } 
   // Любая другая нераспознанная команда - тоже показываем справку
   else {
     printUsage(); // Обработка неизвестных команд

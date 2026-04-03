@@ -12,7 +12,9 @@ void main(List<String> arguments) {
   } 
   // Если первый аргумент 'search' - команда поиска
   else if (arguments.first == 'search') {
-    print('Search command recognized!'); // Заглушка для команды поиска
+    // Получаем аргументы после 'search' (или null, если их нет)
+    final inputArgs = arguments.length > 1 ? arguments.sublist(1) : null;
+    searchWikipedia(inputArgs); // Вызываем функцию поиска
   } 
   // Любая другая нераспознанная команда - тоже показываем справку
   else {

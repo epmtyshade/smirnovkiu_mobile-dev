@@ -47,7 +47,10 @@ void searchWikipedia(List<String>? arguments) {
 
 // Асинхронная функция для получения статьи из Wikipedia API
 Future<String> getWikipediaArticle(String articleTitle) async {
-  // Здесь будет код для отправки HTTP-запроса к Wikipedia API
+  final url = Uri.https(
+    'en.wikipedia.org', // Wikipedia API domain
+    '/api/rest_v1/page/summary/$articleTitle', // API path for article summary
+  );
   return 'Article content for: $articleTitle'; // Временный возврат
 }
 

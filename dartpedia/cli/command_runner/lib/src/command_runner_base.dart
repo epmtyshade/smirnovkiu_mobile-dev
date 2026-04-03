@@ -6,13 +6,19 @@ import 'arguments.dart';
 import 'exceptions.dart'; // Для ArgumentException
 
 class CommandRunner {
-  // Конструктор с необязательным callback для обработки ошибок
-  CommandRunner({this.onError});
+  // Конструктор с необязательными callback для обработки вывода и ошибок
+  CommandRunner({this.onOutput, this.onError});
 
   final Map<String, Command> _commands = <String, Command>{};
 
   UnmodifiableSetView<Command> get commands =>
       UnmodifiableSetView<Command>(<Command>{..._commands.values});
+
+  /// Если не null, этот метод используется для обработки вывода.
+  /// Полезно, если нужно выполнить код перед выводом в консоль,
+  /// или если нужно сделать что-то другое, вместо вывода в консоль.
+  /// Если null, метод [print] будет использован для вывода.
+  FutureOr<void> Function(String)? onOutput;
 
   // Функция обратного вызова для обработки ошибок
   FutureOr<void> Function(Object)? onError;
@@ -22,7 +28,11 @@ class CommandRunner {
       final ArgResults results = parse(input);
       if (results.command != null) {
         Object? output = await results.command!.run(results);
-        print(output.toString());
+        if (onOutput != null) {
+          await onOutput!(output.toString());
+        } else {
+          print(output.toString());
+        }
       }
     } on Exception catch (exception) {
       if (onError != null) {

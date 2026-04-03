@@ -13,9 +13,9 @@ void main(List<String> arguments) {
   else if (arguments.first == 'version') {
     print('Dartpedia CLI version $version');
   } 
-  // Если первый аргумент 'search' - команда поиска
-  else if (arguments.first == 'search') {
-    // Получаем аргументы после 'search' (или null, если их нет)
+  // Если первый аргумент 'wikipedia' - команда поиска в Wikipedia
+  else if (arguments.first == 'wikipedia') { // Изменено с 'search' на 'wikipedia'
+    // Получаем аргументы после 'wikipedia' (или null, если их нет)
     final inputArgs = arguments.length > 1 ? arguments.sublist(1) : null;
     searchWikipedia(inputArgs); // Вызываем функцию поиска
   } 
@@ -67,6 +67,6 @@ Future<String> getWikipediaArticle(String articleTitle) async {
 // Функция для отображения справки по доступным командам
 void printUsage() {
   print(
-    "The following commands are valid: 'help', 'version', 'search <ARTICLE-TITLE>'"
+    "The following commands are valid: 'help', 'version', 'wikipedia <ARTICLE-TITLE>'"
   );
 }

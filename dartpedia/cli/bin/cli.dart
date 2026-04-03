@@ -1,3 +1,5 @@
+import 'dart:io'; // Добавлен для работы с stdin (ввод пользователя)
+
 // Объявление константы для версии приложения
 const version = '0.0.1';
 
@@ -22,9 +24,21 @@ void main(List<String> arguments) {
   }
 }
 
-// Функция поиска в Wikipedia (получает аргументы команды search)
+// Функция поиска в Wikipedia
 void searchWikipedia(List<String>? arguments) {
-  print('searchWikipedia received arguments: $arguments');
+  final String articleTitle;
+
+  // Если пользователь не передал аргументы - запрашиваем название статьи
+  if (arguments == null || arguments.isEmpty) {
+    print('Please provide an article title.');
+    // Ожидаем ввод и подставляем пустую строку, если ввод равен null
+    articleTitle = stdin.readLineSync() ?? '';
+  } else {
+    // Иначе объединяем все аргументы в одну строку
+    articleTitle = arguments.join(' ');
+  }
+
+  print('Current article title: $articleTitle');
 }
 
 // Функция для отображения справки по доступным командам

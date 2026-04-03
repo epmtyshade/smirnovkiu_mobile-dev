@@ -1,4 +1,5 @@
 import 'dart:io'; // Добавлен для работы с stdin (ввод пользователя)
+import 'package:http/http.dart' as http; // Для отправки HTTP-запросов к Wikipedia API
 
 // Объявление константы для версии приложения
 const version = '0.0.1';

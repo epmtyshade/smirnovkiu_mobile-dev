@@ -2,13 +2,17 @@
 const version = '0.0.1';
 
 void main(List<String> arguments) {
-  // Если аргументы командной строки не переданы - выводим приветствие
-  if (arguments.isEmpty) {
-    print('Hello, Kirill!');
+  // Если нет аргументов или первый аргумент 'help' - показываем справку
+  if (arguments.isEmpty || arguments.first == 'help') {
+    printUsage(); // Вызов функции справки
   } 
-  // Если первый аргумент равен 'version' - выводим версию CLI
+  // Если первый аргумент 'version' - показываем версию
   else if (arguments.first == 'version') {
-    print('Dartpedia CLI version $version'); // $version - строковая интерполяция
+    print('Dartpedia CLI version $version');
+  } 
+  // Любая другая нераспознанная команда - тоже показываем справку
+  else {
+    printUsage(); // Обработка неизвестных команд
   }
 }
 

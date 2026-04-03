@@ -1,5 +1,5 @@
 import 'dart:io'; // Добавлен для работы с stdin (ввод пользователя)
-import 'package:http/http.dart' as http; // Для отправки HTTP-запросов к Wikipedia API
+import 'package:http/http.dart' as http; // Добавлен для HTTP-запросов к Wikipedia API
 
 // Объявление константы для версии приложения
 const version = '0.0.1';
@@ -45,9 +45,16 @@ void searchWikipedia(List<String>? arguments) {
   print('(Pretend this is an article about "$articleTitle")');
 }
 
+// Асинхронная функция для получения статьи из Wikipedia API
+Future<String> getWikipediaArticle(String articleTitle) async {
+  // Здесь будет код для отправки HTTP-запроса к Wikipedia API
+  return 'Article content for: $articleTitle'; // Временный возврат
+}
+
 // Функция для отображения справки по доступным командам
 void printUsage() {
   print(
     "The following commands are valid: 'help', 'version', 'search <ARTICLE-TITLE>'"
   );
 }
+

@@ -11,3 +11,10 @@ void main(List<String> arguments) {
     print('Dartpedia CLI version $version'); // $version - строковая интерполяция
   }
 }
+
+// Функция для отображения справки по доступным командам
+void printUsage() {
+  print(
+    "The following commands are valid: 'help', 'version', 'search <ARTICLE-TITLE>'"
+  );
+}

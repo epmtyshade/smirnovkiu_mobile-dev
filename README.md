@@ -1,4 +1,4 @@
 # smirnovkiu_mobile-dev
 Вступительный обучающий курс по Dart.
 
-<img width="711" height="563" alt="Screenshot_15" src="https://github.com/user-attachments/assets/48e0ac67-c76b-4a12-adf1-8571bb647d95" />
+<img width="776" height="957" alt="Screenshot_16" src="https://github.com/user-attachments/assets/bec142b2-fca4-43db-a405-8e568c1dc04e" />
